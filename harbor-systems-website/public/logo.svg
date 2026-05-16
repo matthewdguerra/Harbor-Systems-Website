@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Harbor Systems lighthouse logo">
+  <defs>
+    <linearGradient id="sea" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0F1B2D"/>
+      <stop offset="100%" stop-color="#1A2A44"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#E4C46B" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#E4C46B" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="18%" r="45%">
+      <stop offset="0%" stop-color="#E4C46B" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#E4C46B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#sea)"/>
+  <ellipse cx="256" cy="118" rx="150" ry="90" fill="url(#glow)"/>
+  <path d="M156 150 L256 70 L356 150 L330 150 L330 360 L182 360 L182 150 Z" fill="#F6F8FB"/>
+  <path d="M198 150 L256 98 L314 150 L298 150 L298 332 L214 332 L214 150 Z" fill="#0F1B2D" opacity="0.08"/>
+  <rect x="228" y="118" width="56" height="56" rx="10" fill="#E4C46B"/>
+  <path d="M120 360 H392" stroke="#E4C46B" stroke-width="10" stroke-linecap="round" opacity="0.55"/>
+  <path d="M256 70 L420 120 L256 170 L92 120 Z" fill="url(#beam)" opacity="0.35"/>
+  <g stroke="#E4C46B" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.9">
+    <path d="M236 210 H276 M236 238 H276 M236 266 H276"/>
+    <path d="M220 294 H292"/>
+    <circle cx="256" cy="318" r="16"/>
+    <path d="M248 318 H264 M256 310 V326"/>
+    <path d="M210 210 L236 238 M302 210 L276 238"/>
+    <path d="M210 266 L236 238 M302 266 L276 238"/>
+  </g>
+  <path d="M196 360 C196 392 220 412 256 412 C292 412 316 392 316 360" fill="none" stroke="#E4C46B" stroke-width="8" stroke-linecap="round" opacity="0.35"/>
+</svg>

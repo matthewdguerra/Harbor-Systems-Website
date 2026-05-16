@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #0F1B2D;
+  --navy2: #1A2A44;
+  --gold: #E4C46B;
+  --gold-soft: rgba(228,196,107,0.7);
+  --white: #FFFFFF;
+  --off-white: #F6F8FB;
+  --surface: rgba(255,255,255,0.82);
+  --text-dark: #122033;
+  --text-muted: rgba(18,32,51,0.68);
+  --glass: rgba(255,255,255,0.06);
+  --glass-border: rgba(228,196,107,0.18);
+  --shadow-soft: 0 10px 30px rgba(15,27,45,0.08);
+  --shadow-lg: 0 25px 60px rgba(15,27,45,0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--off-white);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(228, 196, 107, 0.35);
+  color: var(--navy);
+}
+
+.brand-logo {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.brand-logo:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 8px 20px rgba(228,196,107,0.25));
+}
+
+.section-light {
+  background: var(--off-white);
+  color: var(--text-dark);
+}
+
+.section-white {
+  background: var(--white);
+  color: var(--text-dark);
+}
+
+.section-dark {
+  background:
+    radial-gradient(circle at 20% 10%, rgba(228,196,107,0.18), transparent 28rem),
+    linear-gradient(135deg, var(--navy), var(--navy2));
+  color: white;
+}
+
+.premium-card {
+  background: white;
+  border-radius: 24px;
+  border: 1px solid rgba(15,27,45,0.06);
+  box-shadow: var(--shadow-soft);
+  padding: 2rem;
+  transition: all 0.35s ease;
+}
+
+.premium-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.gold-line {
+  width: 72px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--gold), rgba(228,196,107,0));
+}
+
+.focus-ring {
+  outline: none;
+}
+
+.focus-ring:focus-visible {
+  box-shadow: 0 0 0 4px rgba(228,196,107,0.28);
+}
+
+.mesh-bg {
+  background-image:
+    linear-gradient(rgba(15,27,45,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15,27,45,0.04) 1px, transparent 1px);
+  background-size: 52px 52px;
+}
