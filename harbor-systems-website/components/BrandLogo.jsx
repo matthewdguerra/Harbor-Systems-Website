@@ -1,15 +1,17 @@
 import Image from "next/image";
 
 const sizes = {
-  sm: { width: 28, height: 28, className: "h-7 w-auto" },
-  md: { width: 84, height: 84, className: "brand-logo" },
-  lg: { width: 900, height: 900, className: "relative mx-auto h-auto w-full max-w-[30rem] drop-shadow-2xl" },
-  chat: { width: 42, height: 42, className: "h-10 w-auto rounded-full bg-white/10" }
+  xs:   { width: 24,  height: 24,  className: "h-6 w-6 object-contain" },
+  sm:   { width: 32,  height: 32,  className: "h-8 w-8 object-contain" },
+  md:   { width: 44,  height: 44,  className: "h-11 w-11 object-contain" },
+  lg:   { width: 480, height: 480, className: "h-auto w-full max-w-[22rem] object-contain drop-shadow-2xl" },
+  chat: { width: 36,  height: 36,  className: "h-9 w-9 rounded-xl object-contain" },
+  hero: { width: 56,  height: 56,  className: "h-14 w-14 object-contain" }
 };
 
 export default function BrandLogo({
   size = "md",
-  alt = "Harbor Systems lighthouse logo",
+  alt = "Harbor Systems lighthouse",
   priority = false,
   className = ""
 }) {
@@ -17,7 +19,7 @@ export default function BrandLogo({
 
   return (
     <Image
-      src="/logo.svg"
+      src="/lighthouse.png"
       alt={alt}
       width={config.width}
       height={config.height}

@@ -26,16 +26,19 @@ export const metadata = {
   description:
     "Harbor Systems designs responsible AI, automation, dashboards, and operational intelligence systems for churches, nonprofits, and schools.",
   icons: {
-    icon: [{ url: "/logo.svg", type: "image/svg+xml" }],
-    shortcut: "/logo.svg",
-    apple: "/logo.svg"
+    icon: [
+      { url: "/lighthouse.png", type: "image/png", sizes: "1024x1024" },
+      { url: "/favicon.ico", sizes: "any" }
+    ],
+    shortcut: "/lighthouse.png",
+    apple: "/lighthouse.png"
   },
   openGraph: {
     title: "Harbor Systems",
     description:
       "Premium operational intelligence and responsible AI implementation for mission-driven organizations.",
     type: "website",
-    images: ["/logo.svg"]
+    images: ["/lighthouse.png"]
   }
 };
 

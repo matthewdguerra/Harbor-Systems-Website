@@ -8,7 +8,7 @@ export const services = [
   },
   {
     title: "Workflow Automation",
-    text: "Automated approvals, notifications, follow-ups, data entry, reporting flows, and task routing across existing tools.",
+    text: "Automated approvals, notifications, follow-ups, data entry, reporting flows, and task routing across your existing tools.",
     icon: RefreshCw
   },
   {
@@ -18,7 +18,7 @@ export const services = [
   },
   {
     title: "Connected Data Systems",
-    text: "CRM, donation, attendance, accounting, form, spreadsheet, and email systems connected into a cleaner operating layer.",
+    text: "CRM, donation, attendance, accounting, form, spreadsheet, and email systems connected into a single operating layer.",
     icon: DatabaseZap
   },
   {
@@ -37,11 +37,11 @@ export default function ServicesGrid() {
   return (
     <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
       {services.map(({ title, text, icon: Icon }) => (
-        <div key={title} className="premium-card">
-          <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-navy text-gold">
-            <Icon size={23} />
+        <div key={title} className="premium-card group">
+          <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-navy text-gold transition-transform duration-300 group-hover:scale-110">
+            <Icon size={21} />
           </div>
-          <h3 className="text-lg font-bold text-navy">{title}</h3>
+          <h3 className="text-[1.0625rem] font-bold text-navy">{title}</h3>
           <p className="mt-3 text-sm leading-7 text-muted">{text}</p>
         </div>
       ))}

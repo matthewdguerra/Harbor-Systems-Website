@@ -3,61 +3,111 @@
 import BrandLogo from "@/components/BrandLogo";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, ShieldCheck } from "lucide-react";
+import { ArrowRight, ShieldCheck, Zap, Users } from "lucide-react";
+
+const badges = [
+  { icon: ShieldCheck, label: "Privacy-first AI" },
+  { icon: Zap,         label: "Integration over replacement" },
+  { icon: Users,       label: "Built for non-technical teams" }
+];
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[92vh] overflow-hidden bg-white pt-28">
-      <div className="absolute inset-0 mesh-bg opacity-80" />
-      <div className="absolute left-1/2 top-10 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-gold/20 blur-3xl" />
-      <div className="absolute right-[-10rem] top-40 h-[28rem] w-[28rem] rounded-full bg-navy/10 blur-3xl" />
+    <section className="relative min-h-[94vh] overflow-hidden bg-white pt-[72px]">
+      {/* Subtle grid background */}
+      <div className="absolute inset-0 mesh-bg opacity-60" />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 pb-20 pt-12 lg:grid-cols-[1.05fr_0.95fr] lg:pb-28">
-        <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease: "easeOut" }}>
-          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-white/90 px-4 py-2 text-sm font-semibold text-navy shadow-soft">
-            <BrandLogo size="sm" alt="" />
-            Responsible AI for mission-driven teams
+      {/* Glow blobs */}
+      <div className="absolute left-1/2 top-0 h-[38rem] w-[56rem] -translate-x-1/2 rounded-full bg-gold/[0.12] blur-[96px]" />
+      <div className="absolute right-[-8rem] top-[30%] h-[28rem] w-[28rem] rounded-full bg-navy/[0.07] blur-[80px]" />
+
+      <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 py-16 lg:grid-cols-[1.08fr_0.92fr] lg:py-24 lg:px-8">
+        {/* Left column */}
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        >
+          {/* Badge */}
+          <div className="mb-8 inline-flex items-center gap-2.5 rounded-full border border-gold/30 bg-white/90 px-4 py-2 text-sm font-semibold text-navy shadow-soft">
+            <BrandLogo size="xs" alt="" />
+            <span>Responsible AI for mission-driven teams</span>
           </div>
-          <h1 className="max-w-4xl font-display text-4xl font-semibold leading-[1.08] text-navy sm:text-6xl">
+
+          <h1 className="max-w-[17ch] font-display text-[2.625rem] font-semibold leading-[1.1] tracking-[-0.01em] text-navy sm:text-[3.25rem] lg:text-[3.75rem]">
             Operational intelligence that protects your mission.
           </h1>
-          <p className="mt-7 max-w-2xl text-lg leading-8 text-muted sm:text-xl">
-            Harbor Systems helps churches, nonprofits, and schools unify scattered tools, automate repetitive work, and give leaders clear insight without replacing the human judgment that makes the mission matter.
+
+          <p className="mt-6 max-w-[50ch] text-lg leading-[1.75] text-muted sm:text-xl">
+            Harbor Systems helps churches, nonprofits, and schools unify scattered tools, automate repetitive work, and give leaders clear insight — without replacing the human judgment that makes the mission matter.
           </p>
+
+          {/* CTAs */}
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Link href="/contact" className="focus-ring inline-flex items-center justify-center gap-2 rounded-full bg-navy px-6 py-3.5 font-bold text-white shadow-premium transition hover:-translate-y-1 hover:bg-navy2">
-              Book a Consultation <ArrowRight size={18} />
+            <Link
+              href="/contact"
+              className="focus-ring inline-flex items-center justify-center gap-2 rounded-full bg-navy px-7 py-3.5 text-[0.9375rem] font-bold text-white shadow-premium transition-all duration-200 hover:-translate-y-1 hover:bg-navy2 hover:shadow-xl"
+            >
+              Book a Consultation <ArrowRight size={17} />
             </Link>
-            <Link href="/services" className="focus-ring inline-flex items-center justify-center rounded-full border border-navy/12 bg-white px-6 py-3.5 font-bold text-navy shadow-soft transition hover:-translate-y-1 hover:border-gold/70">
+            <Link
+              href="/services"
+              className="focus-ring inline-flex items-center justify-center rounded-full border border-black/10 bg-white px-7 py-3.5 text-[0.9375rem] font-semibold text-navy shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-gold/60"
+            >
               Explore Solutions
             </Link>
           </div>
-          <div className="mt-8 flex flex-wrap gap-3 text-sm font-semibold text-navy/70">
-            <span className="inline-flex items-center gap-2 rounded-full bg-offwhite px-4 py-2"><ShieldCheck size={16} /> Privacy-first</span>
-            <span className="inline-flex items-center gap-2 rounded-full bg-offwhite px-4 py-2">Integration over replacement</span>
-            <span className="inline-flex items-center gap-2 rounded-full bg-offwhite px-4 py-2">Built for non-technical teams</span>
+
+          {/* Trust badges */}
+          <div className="mt-9 flex flex-wrap gap-2.5">
+            {badges.map(({ icon: Icon, label }) => (
+              <span
+                key={label}
+                className="inline-flex items-center gap-2 rounded-full bg-offwhite px-4 py-2 text-sm font-medium text-ink/70"
+              >
+                <Icon size={14} className="text-gold" />
+                {label}
+              </span>
+            ))}
           </div>
         </motion.div>
 
+        {/* Right column — brand display */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
+          initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.12, ease: "easeOut" }}
+          transition={{ duration: 0.8, delay: 0.14, ease: [0.22, 1, 0.36, 1] }}
           className="relative"
         >
-          <div className="absolute inset-8 rounded-[2rem] bg-gold/25 blur-3xl" />
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/70 bg-navy p-6 shadow-premium">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_15%,rgba(228,196,107,0.24),transparent_28rem)]" />
-            <BrandLogo size="lg" priority className="relative mx-auto h-auto w-full max-w-[30rem] drop-shadow-2xl" />
-            <div className="relative mt-4 grid gap-3 rounded-3xl border border-white/10 bg-white/10 p-4 text-white backdrop-blur">
-              <div className="flex items-center justify-between gap-4">
-                <span className="text-sm text-white/60">Operational clarity</span>
-                <span className="rounded-full bg-gold px-3 py-1 text-xs font-bold text-navy">Live system</span>
+          {/* Glow behind card */}
+          <div className="absolute inset-10 rounded-[2.5rem] bg-gold/20 blur-3xl" />
+
+          {/* Main card */}
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/60 bg-navy shadow-xl">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_28%_12%,rgba(200,168,75,0.22),transparent_56%)]" />
+
+            {/* Lighthouse logo */}
+            <div className="relative flex items-center justify-center p-10 pb-6">
+              <BrandLogo size="lg" priority className="h-auto w-full max-w-[18rem] object-contain drop-shadow-2xl" />
+            </div>
+
+            {/* Status panel */}
+            <div className="relative mx-5 mb-5 rounded-2xl border border-white/10 bg-white/[0.08] p-4 backdrop-blur-sm">
+              <div className="mb-3 flex items-center justify-between gap-4">
+                <div className="flex items-center gap-2">
+                  <span className="h-2 w-2 animate-pulse rounded-full bg-gold" />
+                  <span className="text-sm text-white/70">Operational clarity</span>
+                </div>
+                <span className="rounded-full bg-gold/20 px-3 py-1 text-xs font-semibold text-gold">
+                  Live system
+                </span>
               </div>
-              <div className="h-2 rounded-full bg-white/10">
-                <div className="h-2 w-4/5 rounded-full bg-gold" />
+              <div className="mb-3 h-1.5 rounded-full bg-white/10">
+                <div className="h-1.5 w-[78%] rounded-full bg-gold transition-all duration-500" />
               </div>
-              <p className="text-sm leading-6 text-white/70">One connected layer for data, workflows, dashboards, and AI-assisted insight.</p>
+              <p className="text-sm leading-6 text-white/60">
+                One connected layer for data, workflows, dashboards, and AI-assisted insight.
+              </p>
             </div>
           </div>
         </motion.div>

@@ -7,20 +7,26 @@ const config = {
   theme: {
     extend: {
       colors: {
-        navy: "#0F1B2D",
-        navy2: "#1A2A44",
-        gold: "#E4C46B",
-        offwhite: "#F6F8FB",
-        ink: "#122033",
-        muted: "rgba(18,32,51,0.68)"
+        navy:     "#0D1926",
+        "navy-mid": "#152236",
+        navy2:    "#1C2E48",
+        gold:     "#C8A84B",
+        "gold-light": "#D9BC78",
+        offwhite: "#F7F9FC",
+        surface:  "#EFF3F8",
+        ink:      "#0D1926",
+        muted:    "rgba(13,25,38,0.68)"
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "Inter", "sans-serif"],
-        display: ["var(--font-cinzel)", "Cinzel", "serif"]
+        sans:    ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
+        display: ["var(--font-cinzel)", "Cinzel", "Georgia", "serif"]
       },
       boxShadow: {
-        soft: "0 10px 30px rgba(15,27,45,0.08)",
-        premium: "0 25px 60px rgba(15,27,45,0.14)"
+        xs:      "0 1px 4px rgba(13,25,38,0.06)",
+        soft:    "0 4px 16px rgba(13,25,38,0.08)",
+        md:      "0 8px 28px rgba(13,25,38,0.10)",
+        premium: "0 20px 52px rgba(13,25,38,0.13)",
+        xl:      "0 32px 80px rgba(13,25,38,0.17)"
       }
     }
   },
